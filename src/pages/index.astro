@@ -1,4 +1,23 @@
 ---
+import "../styles/global.css";
+const res = await fetch(
+	"https://script.google.com/macros/s/AKfycbx0VPwYQRCffgDlGZU6joF7oz8A_CSgZbWo6XFEK9_tQKZ-xqjmwV0k0g0o8out4aNEkA/exec"
+);
+const data = await res.json();
+const stringData = JSON.stringify(data, null, 2);
+const parsedData = JSON.parse(stringData)
+console.log(parsedData); 
+
+const octopusResult = parsedData.octopusResult
+// console.log(octopusResult)
+// console.log(data)
+
+// for (let i = 0; i < octopusResult.length; i++) {
+// 	// console.log(octopusResult[i].productName)
+// 	console.log(octopusResult[i].productName)
+// 	console.log(octopusResult[i].price)
+// 	console.log(octopusResult[i].amount)
+// }
 
 ---
 
@@ -12,6 +31,31 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<!-- <p>test</p> -->
+		<!-- <h1>{parsedData.data}</h1> -->
+		<!-- <ul>
+		{
+			octopusResult.map((item) => (
+				<li>{item.productName}</li>
+			))
+		}
+		</ul> -->
+		<div class="grid grid-cols-3 gap-4 content-center place-items-center text-center m-20">
+			{
+				octopusResult.map((item) => (
+					<div class="m-15 bg-amber-100 p-15 rounded-3xl">
+						<h1><b>{item.productName}</b></h1>
+						<br>
+						<div class="flex content-normal gap-5">
+							<p>{item.price} </p>
+							<br>
+							<p>Amount Left: {item.amount}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+		
+
 	</body>
 </html>
