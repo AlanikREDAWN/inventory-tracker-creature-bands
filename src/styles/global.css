@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+.active {
+    /* @apply bg-indigo-600 text-white rounded-t-2xl; */
+    display: inline-block; 
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem; 
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; 
+
+
+    background-color: #4F46E5; 
+    color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem; 
+
+
+    /* color: red; */
+}

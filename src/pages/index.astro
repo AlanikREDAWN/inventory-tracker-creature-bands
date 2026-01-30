@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import CardGroup from "../components/cardGroup.astro";
+import NavBar from "../components/navBar.astro";
 const res = await fetch(
 	"https://script.google.com/macros/s/AKfycbx0VPwYQRCffgDlGZU6joF7oz8A_CSgZbWo6XFEK9_tQKZ-xqjmwV0k0g0o8out4aNEkA/exec"
 );
@@ -31,6 +33,9 @@ const octopusResult = parsedData.octopusResult
 		<title>Astro</title>
 	</head>
 	<body>
+		<NavBar />
+		<h1>Main</h1>
+		
 		<!-- <p>test</p> -->
 		<!-- <h1>{parsedData.data}</h1> -->
 		<!-- <ul>
@@ -40,7 +45,7 @@ const octopusResult = parsedData.octopusResult
 			))
 		}
 		</ul> -->
-		<div class="grid grid-cols-3 gap-4 content-center place-items-center text-center m-20">
+		<!-- <div class="grid grid-cols-3 gap-4 content-center place-items-center text-center m-20">
 			{
 				octopusResult.map((item) => (
 					<div class="m-15 bg-amber-100 p-15 rounded-3xl">
@@ -54,8 +59,6 @@ const octopusResult = parsedData.octopusResult
 					</div>
 				))
 			}
-		</div>
-		
-
+		</div> -->
 	</body>
 </html>

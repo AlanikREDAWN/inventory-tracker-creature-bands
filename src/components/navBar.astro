@@ -1,0 +1,20 @@
+---
+// const pathname = new URL(Astro.request.url).pathname;
+// const currentPath = pathname.slice(1);
+const { pathname } = Astro.url;
+---
+
+<!-- <nav>
+    <a class={currentPath === "" ? "active" : ""} href="/">Home</a>
+    <a class={currentPath === "octopus_keychains" ? "active" : ""} href="/octopus_keychains">Octopus Keychains</a>
+    <a class={currentPath === "bracelets" ? "active" : ""} href="/bracelets">Bracelets</a>
+    <a class={currentPath === "mushrooms" ? "acitve" : ""} href="/mushrooms">Mushrooms</a>
+    <a class={currentPath === "stickers" ? "active" : ""} href="/stickers">Stickers</a>
+</nav> -->
+<nav class="flex flex-wrap transition-all duration-300 overflow-hidden m-5">
+    <a class={pathname.slice(1) ===  '' ? 'active' : 'inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium'} href="/">Home</a>
+    <a class={pathname.slice(1) ===  'octopusKeychains' ? 'active' : 'inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium'} href="/octopusKeychains">Octopus Keychains</a>
+    <a class={pathname.slice(1) ===  'bracelets' ? 'active' : 'inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium'} href="/bracelets">Bracelets</a>
+    <a class={pathname.slice(1) ===  'mushrooms' ? 'active' : 'inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium'} href="/mushrooms">Mushrooms</a>
+    <a class={pathname.slice(1) ===  'stickers' ? 'active' : 'inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium'} href="/stickers">Stickers</a>
+</nav>

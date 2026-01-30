@@ -1,0 +1,18 @@
+---
+const { result } = Astro.props;
+---
+<div class="grid grid-cols-3 gap-4 content-center place-items-center text-center">
+	{
+		result.map((item) => (
+			<div class="m-15 bg-amber-100 p-20 rounded-3xl border-amber-950 border-3 transition duration-500 hover:scale-105">
+				<h1 class="text-xl text-heading font-semibold tracking-tight">{item.productName}</h1>
+				<br>
+				<div class="flex content-normal gap-10 justify-between">
+					<p class="text-3xl font-extrabold text-heading">{item.price} </p>
+					<br>
+					<p class="font-bold">Amount Left: {item.amount}</p>
+				</div>
+			</div>
+		))
+	}
+</div>
