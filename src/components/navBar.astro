@@ -11,7 +11,7 @@ const { pathname } = Astro.url;
     <a class={currentPath === "mushrooms" ? "acitve" : ""} href="/mushrooms">Mushrooms</a>
     <a class={currentPath === "stickers" ? "active" : ""} href="/stickers">Stickers</a>
 </nav> -->
-<nav class="flex flex-wrap transition-all duration-300 overflow-hidden m-5">
+<nav class="flex flex-wrap transition-all duration-300 overflow-hidden pt-5 pl-5 pr-5 bg-indigo-50 border-b-4 border-indigo-400">
     <a class={pathname.slice(1) ===  '' ? 'active' : 'inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium'} href="/">Home</a>
     <a class={pathname.slice(1) ===  'octopusKeychains' ? 'active' : 'inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium'} href="/octopusKeychains">Octopus Keychains</a>
     <a class={pathname.slice(1) ===  'bracelets' ? 'active' : 'inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium'} href="/bracelets">Bracelets</a>
