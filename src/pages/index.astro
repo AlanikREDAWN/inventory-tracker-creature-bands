@@ -2,13 +2,9 @@
 import "../styles/global.css";
 import CardGroup from "../components/cardGroup.astro";
 import NavBar from "../components/navBar.astro";
-const res = await fetch(
-	"https://script.google.com/macros/s/AKfycby2mjflS7cawYN-dHN0YfWrbKAFhK7jzBcg0plifMDS8yCmyFGYyXnQMjMZcgkO3feW8g/exec"
-);
-const data = await res.json();
-const stringData = JSON.stringify(data, null, 2);
-const parsedData = JSON.parse(stringData)
-console.log(parsedData); 
+import { getData } from '../utils/getData.js';
+
+const parsedData = await getData();
 
 const octopusResult = parsedData.octopusResult
 const braceletResult = parsedData.braceletResult
@@ -39,15 +35,6 @@ for (let i = 0; i < stickerResult.length; i++) {
 }
 
 const total = octopusTotal + braceletTotal + mushroomTotal + stickerTotal
-// console.log(octopusResult)
-// console.log(data)
-
-// for (let i = 0; i < octopusResult.length; i++) {
-// 	// console.log(octopusResult[i].productName)
-// 	console.log(octopusResult[i].productName)
-// 	console.log(octopusResult[i].price)
-// 	console.log(octopusResult[i].amount)
-// }
 
 ---
 

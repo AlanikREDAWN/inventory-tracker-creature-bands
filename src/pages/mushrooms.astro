@@ -2,13 +2,9 @@
 import "../styles/global.css";
 import CardGroup from "../components/cardGroup.astro";
 import NavBar from "../components/navBar.astro";
-const res = await fetch(
-	"https://script.google.com/macros/s/AKfycbx0VPwYQRCffgDlGZU6joF7oz8A_CSgZbWo6XFEK9_tQKZ-xqjmwV0k0g0o8out4aNEkA/exec"
-);
-const data = await res.json();
-const stringData = JSON.stringify(data, null, 2);
-const parsedData = JSON.parse(stringData)
-console.log(parsedData); 
+import { getData } from '../utils/getData.js';
+
+const parsedData = await getData();
 
 const mushroomResult = parsedData.mushroomResult
 
