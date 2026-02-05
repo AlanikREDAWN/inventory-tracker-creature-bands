@@ -3,38 +3,11 @@ import "../styles/global.css";
 import CardGroup from "../components/cardGroup.astro";
 import NavBar from "../components/navBar.astro";
 import { getData } from '../utils/getData.js';
+import { addValue } from '../utils/addValue.js'
 
 const parsedData = await getData();
 
-const octopusResult = parsedData.octopusResult
-const braceletResult = parsedData.braceletResult
-const mushroomResult = parsedData.mushroomResult
-const stickerResult = parsedData.stickerResult
-
-var octopusTotal = 0 
-var braceletTotal = 0
-var mushroomTotal = 0
-var stickerTotal = 0
-
-
-for (let i = 0; i < octopusResult.length; i++) {
-	octopusTotal += parseFloat(octopusResult[i].price.replace(/[^0-9.]/g, ''))
-	// console.log(octopusTotal)
-}
-for (let i = 0; i < braceletResult.length; i++) {
-	braceletTotal += parseFloat(braceletResult[i].price.replace(/[^0-9.]/g, ''))
-	// console.log(braceletTotal)
-}
-for (let i = 0; i < mushroomResult.length; i++) {
-	mushroomTotal += parseFloat(mushroomResult[i].price.replace(/[^0-9.]/g, ''))
-	// console.log(mushroomTotal)
-}
-for (let i = 0; i < stickerResult.length; i++) {
-	stickerTotal += parseFloat(stickerResult[i].price.replace(/[^0-9.]/g, ''))
-	// console.log(stickerTotal)
-}
-
-const total = octopusTotal + braceletTotal + mushroomTotal + stickerTotal
+const total = await addValue(parsedData);
 
 ---
 
@@ -50,16 +23,16 @@ const total = octopusTotal + braceletTotal + mushroomTotal + stickerTotal
 	<body class="min-h-screen flex flex-col">
 		<NavBar />
 		<main class="bg-indigo-100 flex-grow p-4 overflow-y-auto ">
-			<h1 class="text-4xl font-bold text-heading md:text-5xl lg:text-6xl text-center text-indigo-600 p-5">Creature Bands - Inventory Tracker</h1>
-			<h2 class="2xl md:text-3xl lg:text-4xl text-center text-indigo-500 p-5">This is a live inventory tracker for my business, Creature Bands!</h2>
+			<h1 class="font-heading text-4xl font-bold text-heading md:text-5xl lg:text-6xl text-center text-indigo-600 p-5">Creature Bands - Inventory Tracker</h1>
+			<h2 class="font-body 2xl md:text-3xl lg:text-4xl text-center text-indigo-500 p-5">This is a live inventory tracker for my business, Creature Bands!</h2>
 			<br>
 			<div class="flex justify-center">
-				<button class="flex justify-center items-center text-center p-20 bg-indigo-500 text-white text-2xl font-bold py-2 px-4 border-b-4 border-indigo-700 rounded cursor-pointer hover:bg-indigo-700 hover:border-indigo-500 hover:text-neutral-200">
+				<button class="font-body flex justify-center items-center text-center p-20 bg-indigo-500 text-white text-2xl font-bold py-2 px-4 border-b-4 border-indigo-700 rounded cursor-pointer hover:bg-indigo-700 hover:border-indigo-500 hover:text-neutral-200">
 					<a  href="https://docs.google.com/spreadsheets/d/1wf5cdodHq4Si6xGgeSGhUE3Etdzub_WuyD9k_MJfyUE/edit?usp=sharing" target="_blank" >See the data</a>
 				</button>
 			</div>
 
-			<h2 class="2xl md:text-3xl lg:text-4xl text-center text-indigo-500 p-10">The total value of all my stock is ${total}</h2>
+			<h2 class="font-body 2xl md:text-3xl lg:text-4xl text-center text-indigo-500 p-10">The total value of all my stock is ${total}</h2>
 
 		</main>
 		

@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+
 
 .active {
     /* @apply bg-indigo-600 text-white rounded-t-2xl; */
@@ -7,6 +9,7 @@
     padding-bottom: 0.75rem; 
     padding-left: 1.5rem;
     padding-right: 1.5rem; 
+    font-weight: bold;
 
 
     /* background-color: #4F46E5;  */
@@ -17,4 +20,43 @@
 
 
     /* color: red; */
+}
+
+@font-face {
+    font-family: 'WinterDraw';
+    src: url('../assets/fonts/WinterDraw-ZprDK.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+/* 
+@font-face {
+    font-family: 'Olives';
+    src: url('../assets/fonts/Olives.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OlivesBold';
+    src: url('../assets/fonts/OlivesBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OlivesLight';
+    src: url('../assets/fonts/OlivesLight.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal;
+    font-display: swap;
+} */
+
+@theme {
+    --font-heading: 'WinterDraw', sans-serif;
+    --font-body: 'Sour Gummy', sans-serif;
+    /* --font-body-bold: 'OlivesBold', sans-serif; */
+    /* --font-body-light: 'OlivesLight', sans-serif; */
 }
